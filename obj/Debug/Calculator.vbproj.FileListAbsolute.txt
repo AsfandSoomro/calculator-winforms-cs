@@ -1,0 +1,12 @@
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.vbproj.AssemblyReference.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.Calculator.resources
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.Resources.resources
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.vbproj.GenerateResource.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.vbproj.CoreCompileInputs.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\bin\Debug\Calculator.exe.config
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\bin\Debug\Calculator.exe
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\bin\Debug\Calculator.pdb
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\bin\Debug\Calculator.xml
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.exe
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.xml
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.pdb

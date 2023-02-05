@@ -22,6 +22,7 @@ Partial Class Calculator
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Calculator))
         Me.txtDisplay = New System.Windows.Forms.TextBox()
         Me.btn1 = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
@@ -46,19 +47,24 @@ Partial Class Calculator
         '
         'txtDisplay
         '
+        Me.txtDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDisplay.Location = New System.Drawing.Point(12, 56)
+        Me.txtDisplay.ForeColor = System.Drawing.Color.White
+        Me.txtDisplay.Location = New System.Drawing.Point(12, 49)
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
+        Me.txtDisplay.ReadOnly = True
         Me.txtDisplay.Size = New System.Drawing.Size(245, 57)
         Me.txtDisplay.TabIndex = 0
         Me.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btn1
         '
-        Me.btn1.BackColor = System.Drawing.Color.Gold
+        Me.btn1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn1.ForeColor = System.Drawing.Color.Black
+        Me.btn1.ForeColor = System.Drawing.Color.White
         Me.btn1.Location = New System.Drawing.Point(12, 256)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(52, 34)
@@ -68,9 +74,10 @@ Partial Class Calculator
         '
         'btn2
         '
-        Me.btn2.BackColor = System.Drawing.Color.Gold
+        Me.btn2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn2.ForeColor = System.Drawing.Color.Black
+        Me.btn2.ForeColor = System.Drawing.Color.White
         Me.btn2.Location = New System.Drawing.Point(75, 256)
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(52, 34)
@@ -80,9 +87,10 @@ Partial Class Calculator
         '
         'btnEqual
         '
-        Me.btnEqual.BackColor = System.Drawing.Color.Gold
+        Me.btnEqual.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEqual.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnEqual.ForeColor = System.Drawing.Color.Black
+        Me.btnEqual.ForeColor = System.Drawing.Color.Gold
         Me.btnEqual.Location = New System.Drawing.Point(205, 258)
         Me.btnEqual.Name = "btnEqual"
         Me.btnEqual.Size = New System.Drawing.Size(52, 76)
@@ -92,9 +100,10 @@ Partial Class Calculator
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.Gold
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.Black
+        Me.btnAdd.ForeColor = System.Drawing.Color.Gold
         Me.btnAdd.Location = New System.Drawing.Point(205, 214)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(52, 34)
@@ -104,9 +113,10 @@ Partial Class Calculator
         '
         'btnClear
         '
-        Me.btnClear.BackColor = System.Drawing.Color.Gold
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnClear.ForeColor = System.Drawing.Color.Black
+        Me.btnClear.ForeColor = System.Drawing.Color.Gold
         Me.btnClear.Location = New System.Drawing.Point(12, 125)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(52, 34)
@@ -116,9 +126,10 @@ Partial Class Calculator
         '
         'btn3
         '
-        Me.btn3.BackColor = System.Drawing.Color.Gold
+        Me.btn3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn3.ForeColor = System.Drawing.Color.Black
+        Me.btn3.ForeColor = System.Drawing.Color.White
         Me.btn3.Location = New System.Drawing.Point(139, 256)
         Me.btn3.Name = "btn3"
         Me.btn3.Size = New System.Drawing.Size(52, 34)
@@ -128,9 +139,10 @@ Partial Class Calculator
         '
         'btn4
         '
-        Me.btn4.BackColor = System.Drawing.Color.Gold
+        Me.btn4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn4.ForeColor = System.Drawing.Color.Black
+        Me.btn4.ForeColor = System.Drawing.Color.White
         Me.btn4.Location = New System.Drawing.Point(12, 212)
         Me.btn4.Name = "btn4"
         Me.btn4.Size = New System.Drawing.Size(52, 34)
@@ -140,9 +152,10 @@ Partial Class Calculator
         '
         'btn5
         '
-        Me.btn5.BackColor = System.Drawing.Color.Gold
+        Me.btn5.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn5.ForeColor = System.Drawing.Color.Black
+        Me.btn5.ForeColor = System.Drawing.Color.White
         Me.btn5.Location = New System.Drawing.Point(75, 212)
         Me.btn5.Name = "btn5"
         Me.btn5.Size = New System.Drawing.Size(52, 34)
@@ -152,9 +165,10 @@ Partial Class Calculator
         '
         'btn6
         '
-        Me.btn6.BackColor = System.Drawing.Color.Gold
+        Me.btn6.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn6.ForeColor = System.Drawing.Color.Black
+        Me.btn6.ForeColor = System.Drawing.Color.White
         Me.btn6.Location = New System.Drawing.Point(139, 212)
         Me.btn6.Name = "btn6"
         Me.btn6.Size = New System.Drawing.Size(52, 34)
@@ -164,9 +178,10 @@ Partial Class Calculator
         '
         'btn7
         '
-        Me.btn7.BackColor = System.Drawing.Color.Gold
+        Me.btn7.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn7.ForeColor = System.Drawing.Color.Black
+        Me.btn7.ForeColor = System.Drawing.Color.White
         Me.btn7.Location = New System.Drawing.Point(12, 170)
         Me.btn7.Name = "btn7"
         Me.btn7.Size = New System.Drawing.Size(52, 34)
@@ -176,9 +191,10 @@ Partial Class Calculator
         '
         'btn8
         '
-        Me.btn8.BackColor = System.Drawing.Color.Gold
+        Me.btn8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn8.ForeColor = System.Drawing.Color.Black
+        Me.btn8.ForeColor = System.Drawing.Color.White
         Me.btn8.Location = New System.Drawing.Point(75, 170)
         Me.btn8.Name = "btn8"
         Me.btn8.Size = New System.Drawing.Size(52, 34)
@@ -188,9 +204,10 @@ Partial Class Calculator
         '
         'btn9
         '
-        Me.btn9.BackColor = System.Drawing.Color.Gold
+        Me.btn9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn9.ForeColor = System.Drawing.Color.Black
+        Me.btn9.ForeColor = System.Drawing.Color.White
         Me.btn9.Location = New System.Drawing.Point(139, 170)
         Me.btn9.Name = "btn9"
         Me.btn9.Size = New System.Drawing.Size(52, 34)
@@ -200,9 +217,10 @@ Partial Class Calculator
         '
         'btn0
         '
-        Me.btn0.BackColor = System.Drawing.Color.Gold
+        Me.btn0.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn0.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btn0.ForeColor = System.Drawing.Color.Black
+        Me.btn0.ForeColor = System.Drawing.Color.White
         Me.btn0.Location = New System.Drawing.Point(75, 302)
         Me.btn0.Name = "btn0"
         Me.btn0.Size = New System.Drawing.Size(52, 34)
@@ -212,9 +230,10 @@ Partial Class Calculator
         '
         'btnMinus
         '
-        Me.btnMinus.BackColor = System.Drawing.Color.Gold
+        Me.btnMinus.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnMinus.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnMinus.ForeColor = System.Drawing.Color.Black
+        Me.btnMinus.ForeColor = System.Drawing.Color.Gold
         Me.btnMinus.Location = New System.Drawing.Point(205, 170)
         Me.btnMinus.Name = "btnMinus"
         Me.btnMinus.Size = New System.Drawing.Size(52, 34)
@@ -224,9 +243,10 @@ Partial Class Calculator
         '
         'btnRemove
         '
-        Me.btnRemove.BackColor = System.Drawing.Color.Gold
+        Me.btnRemove.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnRemove.ForeColor = System.Drawing.Color.Black
+        Me.btnRemove.ForeColor = System.Drawing.Color.Gold
         Me.btnRemove.Location = New System.Drawing.Point(205, 124)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(52, 34)
@@ -236,9 +256,10 @@ Partial Class Calculator
         '
         'btnMultiply
         '
-        Me.btnMultiply.BackColor = System.Drawing.Color.Gold
+        Me.btnMultiply.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnMultiply.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnMultiply.ForeColor = System.Drawing.Color.Black
+        Me.btnMultiply.ForeColor = System.Drawing.Color.Gold
         Me.btnMultiply.Location = New System.Drawing.Point(139, 124)
         Me.btnMultiply.Name = "btnMultiply"
         Me.btnMultiply.Size = New System.Drawing.Size(52, 34)
@@ -248,9 +269,10 @@ Partial Class Calculator
         '
         'btnDivide
         '
-        Me.btnDivide.BackColor = System.Drawing.Color.Gold
+        Me.btnDivide.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDivide.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnDivide.ForeColor = System.Drawing.Color.Black
+        Me.btnDivide.ForeColor = System.Drawing.Color.Gold
         Me.btnDivide.Location = New System.Drawing.Point(75, 124)
         Me.btnDivide.Name = "btnDivide"
         Me.btnDivide.Size = New System.Drawing.Size(52, 34)
@@ -260,9 +282,10 @@ Partial Class Calculator
         '
         'btnDot
         '
-        Me.btnDot.BackColor = System.Drawing.Color.Gold
+        Me.btnDot.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDot.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnDot.ForeColor = System.Drawing.Color.Black
+        Me.btnDot.ForeColor = System.Drawing.Color.White
         Me.btnDot.Location = New System.Drawing.Point(139, 300)
         Me.btnDot.Name = "btnDot"
         Me.btnDot.Size = New System.Drawing.Size(52, 34)
@@ -272,9 +295,10 @@ Partial Class Calculator
         '
         'btnPercentage
         '
-        Me.btnPercentage.BackColor = System.Drawing.Color.Gold
+        Me.btnPercentage.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnPercentage.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPercentage.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.btnPercentage.ForeColor = System.Drawing.Color.Black
+        Me.btnPercentage.ForeColor = System.Drawing.Color.White
         Me.btnPercentage.Location = New System.Drawing.Point(12, 302)
         Me.btnPercentage.Name = "btnPercentage"
         Me.btnPercentage.Size = New System.Drawing.Size(52, 34)
@@ -286,8 +310,8 @@ Partial Class Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(269, 386)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(269, 374)
         Me.Controls.Add(Me.btnPercentage)
         Me.Controls.Add(Me.btnDot)
         Me.Controls.Add(Me.btnDivide)
@@ -309,6 +333,7 @@ Partial Class Calculator
         Me.Controls.Add(Me.btn1)
         Me.Controls.Add(Me.txtDisplay)
         Me.ForeColor = System.Drawing.Color.Gray
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Calculator"
         Me.Text = "Calculator"
         Me.ResumeLayout(False)
