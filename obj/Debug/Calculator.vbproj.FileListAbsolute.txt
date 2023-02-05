@@ -10,3 +10,15 @@ F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calcul
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.exe
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.xml
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\bin\Debug\Calculator.exe.config
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\bin\Debug\Calculator.exe
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\bin\Debug\Calculator.pdb
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\bin\Debug\Calculator.xml
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.vbproj.AssemblyReference.cache
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.Calculator.resources
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.Resources.resources
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.vbproj.GenerateResource.cache
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.vbproj.CoreCompileInputs.cache
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.exe
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.xml
+C:\Users\Muhammad Hamza\Source\Repos\calculator-vb.net\obj\Debug\Calculator.pdb
