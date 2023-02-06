@@ -50,6 +50,11 @@ namespace Calculator_CS
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.txtDisplay = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPercentage
@@ -58,7 +63,7 @@ namespace Calculator_CS
             this.btnPercentage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnPercentage.ForeColor = System.Drawing.Color.White;
-            this.btnPercentage.Location = new System.Drawing.Point(12, 297);
+            this.btnPercentage.Location = new System.Drawing.Point(12, 327);
             this.btnPercentage.Name = "btnPercentage";
             this.btnPercentage.Size = new System.Drawing.Size(52, 34);
             this.btnPercentage.TabIndex = 39;
@@ -71,7 +76,7 @@ namespace Calculator_CS
             this.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnDot.ForeColor = System.Drawing.Color.White;
-            this.btnDot.Location = new System.Drawing.Point(139, 295);
+            this.btnDot.Location = new System.Drawing.Point(139, 325);
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(52, 34);
             this.btnDot.TabIndex = 38;
@@ -84,7 +89,7 @@ namespace Calculator_CS
             this.btnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnDivide.ForeColor = System.Drawing.Color.Gold;
-            this.btnDivide.Location = new System.Drawing.Point(75, 119);
+            this.btnDivide.Location = new System.Drawing.Point(75, 149);
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(52, 34);
             this.btnDivide.TabIndex = 37;
@@ -98,7 +103,7 @@ namespace Calculator_CS
             this.btnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnMultiply.ForeColor = System.Drawing.Color.Gold;
-            this.btnMultiply.Location = new System.Drawing.Point(139, 119);
+            this.btnMultiply.Location = new System.Drawing.Point(139, 149);
             this.btnMultiply.Name = "btnMultiply";
             this.btnMultiply.Size = new System.Drawing.Size(52, 34);
             this.btnMultiply.TabIndex = 36;
@@ -112,7 +117,7 @@ namespace Calculator_CS
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.Gold;
-            this.btnRemove.Location = new System.Drawing.Point(205, 119);
+            this.btnRemove.Location = new System.Drawing.Point(205, 149);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(52, 34);
             this.btnRemove.TabIndex = 35;
@@ -126,7 +131,7 @@ namespace Calculator_CS
             this.btnMinus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnMinus.ForeColor = System.Drawing.Color.Gold;
-            this.btnMinus.Location = new System.Drawing.Point(205, 165);
+            this.btnMinus.Location = new System.Drawing.Point(205, 195);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(52, 34);
             this.btnMinus.TabIndex = 34;
@@ -140,7 +145,7 @@ namespace Calculator_CS
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(75, 297);
+            this.btn0.Location = new System.Drawing.Point(75, 327);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(52, 34);
             this.btn0.TabIndex = 33;
@@ -154,7 +159,7 @@ namespace Calculator_CS
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(139, 165);
+            this.btn9.Location = new System.Drawing.Point(139, 195);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(52, 34);
             this.btn9.TabIndex = 32;
@@ -168,7 +173,7 @@ namespace Calculator_CS
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(75, 165);
+            this.btn8.Location = new System.Drawing.Point(75, 195);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(52, 34);
             this.btn8.TabIndex = 31;
@@ -182,7 +187,7 @@ namespace Calculator_CS
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
-            this.btn7.Location = new System.Drawing.Point(12, 165);
+            this.btn7.Location = new System.Drawing.Point(12, 195);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(52, 34);
             this.btn7.TabIndex = 30;
@@ -196,7 +201,7 @@ namespace Calculator_CS
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(139, 207);
+            this.btn6.Location = new System.Drawing.Point(139, 237);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(52, 34);
             this.btn6.TabIndex = 29;
@@ -210,7 +215,7 @@ namespace Calculator_CS
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(75, 207);
+            this.btn5.Location = new System.Drawing.Point(75, 237);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(52, 34);
             this.btn5.TabIndex = 28;
@@ -224,7 +229,7 @@ namespace Calculator_CS
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(12, 207);
+            this.btn4.Location = new System.Drawing.Point(12, 237);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(52, 34);
             this.btn4.TabIndex = 27;
@@ -238,7 +243,7 @@ namespace Calculator_CS
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(139, 251);
+            this.btn3.Location = new System.Drawing.Point(139, 281);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(52, 34);
             this.btn3.TabIndex = 26;
@@ -252,7 +257,7 @@ namespace Calculator_CS
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Gold;
-            this.btnClear.Location = new System.Drawing.Point(12, 120);
+            this.btnClear.Location = new System.Drawing.Point(12, 150);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(52, 34);
             this.btnClear.TabIndex = 25;
@@ -266,7 +271,7 @@ namespace Calculator_CS
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Gold;
-            this.btnAdd.Location = new System.Drawing.Point(205, 209);
+            this.btnAdd.Location = new System.Drawing.Point(205, 239);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 34);
             this.btnAdd.TabIndex = 24;
@@ -276,11 +281,11 @@ namespace Calculator_CS
             // 
             // btnEqual
             // 
-            this.btnEqual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnEqual.BackColor = System.Drawing.Color.Gold;
             this.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.btnEqual.ForeColor = System.Drawing.Color.Gold;
-            this.btnEqual.Location = new System.Drawing.Point(205, 253);
+            this.btnEqual.ForeColor = System.Drawing.Color.Black;
+            this.btnEqual.Location = new System.Drawing.Point(205, 283);
             this.btnEqual.Name = "btnEqual";
             this.btnEqual.Size = new System.Drawing.Size(52, 76);
             this.btnEqual.TabIndex = 23;
@@ -294,7 +299,7 @@ namespace Calculator_CS
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(75, 251);
+            this.btn2.Location = new System.Drawing.Point(75, 281);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(52, 34);
             this.btn2.TabIndex = 22;
@@ -308,7 +313,7 @@ namespace Calculator_CS
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(12, 251);
+            this.btn1.Location = new System.Drawing.Point(12, 281);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(52, 34);
             this.btn1.TabIndex = 21;
@@ -322,7 +327,7 @@ namespace Calculator_CS
             this.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisplay.ForeColor = System.Drawing.Color.White;
-            this.txtDisplay.Location = new System.Drawing.Point(12, 44);
+            this.txtDisplay.Location = new System.Drawing.Point(12, 74);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
             this.txtDisplay.ReadOnly = true;
@@ -330,12 +335,52 @@ namespace Calculator_CS
             this.txtDisplay.TabIndex = 20;
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(269, 22);
+            this.statusStrip1.TabIndex = 40;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darkToolStripMenuItem,
+            this.lightToolStripMenuItem});
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(53, 20);
+            this.toolStripDropDownButton1.Text = "Styles";
+            // 
+            // darkToolStripMenuItem
+            // 
+            this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkToolStripMenuItem.Text = "Dark";
+            this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
+            // 
+            // lightToolStripMenuItem
+            // 
+            this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightToolStripMenuItem.Text = "Light";
+            this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(269, 374);
+            this.ClientSize = new System.Drawing.Size(269, 402);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnPercentage);
             this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btnDivide);
@@ -361,6 +406,8 @@ namespace Calculator_CS
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Calculator_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +435,10 @@ namespace Calculator_CS
         internal System.Windows.Forms.Button btn2;
         internal System.Windows.Forms.Button btn1;
         internal System.Windows.Forms.TextBox txtDisplay;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
     }
 }
 
