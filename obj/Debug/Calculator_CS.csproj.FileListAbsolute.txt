@@ -1,0 +1,10 @@
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\bin\Debug\Calculator_CS.exe.config
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\bin\Debug\Calculator_CS.exe
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\bin\Debug\Calculator_CS.pdb
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.csproj.AssemblyReference.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.Calculator.resources
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.Properties.Resources.resources
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.csproj.GenerateResource.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.csproj.CoreCompileInputs.cache
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.exe
+F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.pdb
