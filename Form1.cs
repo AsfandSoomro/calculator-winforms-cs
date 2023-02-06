@@ -33,11 +33,16 @@ namespace Calculator_CS
             try
             {
                 temp = txtDisplay.Text.Split(sign.ToCharArray()[0]);
+                Console.WriteLine(temp[1]);
             }
             catch
             {
                 System.Console.WriteLine("Some exception occured while converting sign to char");
             }
+
+            if (temp[0] == null) temp[0] = "0";
+            if (temp[1] == null) temp[1] = "0";
+
             nums[0] = Convert.ToInt32(temp[0]);
             nums[1] = Convert.ToInt32(temp[1]);
 
