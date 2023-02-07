@@ -174,13 +174,14 @@ namespace Calculator_CS
 
         public class StringToFormula
         {
-            private string[] _operators = { "-", "+", "/", "*", "^" };
+            private string[] _operators = { "-", "+", "/", "*", "^", "%" };
             private Func<double, double, double>[] _operations = {
         (a1, a2) => a1 - a2,
         (a1, a2) => a1 + a2,
         (a1, a2) => a1 / a2,
         (a1, a2) => a1 * a2,
-        (a1, a2) => Math.Pow(a1, a2)
+        (a1, a2) => Math.Pow(a1, a2),
+        (a1, a2) => a2/a1
     };
 
             public double Eval(string expression)
@@ -210,7 +211,11 @@ namespace Calculator_CS
                         {
                             string op = operatorStack.Pop();
                             double arg2 = operandStack.Pop();
-                            double arg1 = operandStack.Pop();
+                            double arg1 = 100;
+                            if (token != "%")
+                            {
+                                arg1 = operandStack.Pop();
+                            }
                             operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
                         }
                         operatorStack.Push(token);
@@ -226,7 +231,11 @@ namespace Calculator_CS
                 {
                     string op = operatorStack.Pop();
                     double arg2 = operandStack.Pop();
-                    double arg1 = operandStack.Pop();
+                    double arg1 = 100;
+                    if (op != "%")
+                    {
+                        arg1 = operandStack.Pop();
+                    }
                     operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
                 }
                 return operandStack.Pop();
@@ -267,7 +276,7 @@ namespace Calculator_CS
 
             private List<string> getTokens(string expression)
             {
-                string operators = "()^*/+-";
+                string operators = "()^*/+-%";
                 List<string> tokens = new List<string>();
                 StringBuilder sb = new StringBuilder();
 
@@ -303,7 +312,7 @@ namespace Calculator_CS
 
         private void btnPercentage_Click(object sender, EventArgs e)
         {
-
+            txtDisplay.Text += "%";
         }
     }
 }
