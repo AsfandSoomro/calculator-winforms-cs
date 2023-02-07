@@ -69,6 +69,7 @@ namespace Calculator_CS
             this.btnPercentage.TabIndex = 39;
             this.btnPercentage.Text = "%";
             this.btnPercentage.UseVisualStyleBackColor = false;
+            this.btnPercentage.Click += new System.EventHandler(this.btnPercentage_Click);
             // 
             // btnDot
             // 
@@ -82,6 +83,7 @@ namespace Calculator_CS
             this.btnDot.TabIndex = 38;
             this.btnDot.Text = ".";
             this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
             // btnDivide
             // 
@@ -363,14 +365,14 @@ namespace Calculator_CS
             // darkToolStripMenuItem
             // 
             this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.darkToolStripMenuItem.Text = "Dark";
             this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
             // 
             // lightToolStripMenuItem
             // 
             this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.lightToolStripMenuItem.Text = "Light";
             this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
             // 

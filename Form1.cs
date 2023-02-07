@@ -17,108 +17,33 @@ namespace Calculator_CS
             InitializeComponent();
         }
 
-        // Global variables to store the current calculated answer and sign'
-        private int? answer; // ? = Nullable Integer
-        private string sign; 
-
         private void Calculator_Load(object sender, EventArgs e)
         {
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            int[] nums = new int[2];
-            string[] temp = new string[2];
-
-            // Splits at the sign and stores the operands(strings) in temp array of strings
-            if(sign != null) {
-                temp = txtDisplay.Text.Split(sign.ToCharArray()[0]);
-            }
-            
-            // Checks if either of the operand is empty, if it is then assigns "0" to it (string)
-            if (temp[0] == "") temp[0] = "0";
-            if (temp[1] == "") temp[1] = "0";
-
-            // Converts the operands from string to integer
-            nums[0] = Convert.ToInt32(temp[0]);
-            nums[1] = Convert.ToInt32(temp[1]);
-            
-            // Performs Calculation as per sign
-            if (sign == "+")
-            {
-                answer = nums[0] + nums[1];
-            }
-            else if (sign == "-")
-            {
-                answer = nums[0] - nums[1];
-            }
-            else if (sign == "/")
-            {
-                try { 
-                    answer = nums[0] / nums[1]; 
-                }
-                catch (System.DivideByZeroException) {
-                    MessageBox.Show("You cannot divide by zero", "Error");
-                    clear();   
-                }
-            }
-            else if (sign == "x")
-            {
-                answer = nums[0] * nums[1];
-            }
-
-            // Display the output on new on Display on newline
-            if (sign != null && answer != null)
-                txtDisplay.Text += Environment.NewLine + Convert.ToString(answer);
-
-            // Resets the sign (for next calcultions)
-            sign = null;
+            StringToFormula stf = new StringToFormula();
+            double result = stf.Eval(txtDisplay.Text);
+            txtDisplay.Text = result.ToString();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(sign == null) 
-            {
-                sign = "+";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "+";
-                else
-                    txtDisplay.Text += "+";
-            }
+            txtDisplay.Text += "+";
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "-";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "-";
-                else
-                    txtDisplay.Text += "-";
-            }
+            txtDisplay.Text += "-";
         }
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "/";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "/";
-                else
-                    txtDisplay.Text += "/";
-            }
+            txtDisplay.Text += "/";
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "x";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "x";
-                else
-                    txtDisplay.Text += "x";
-            }
+            txtDisplay.Text += "*";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -190,12 +115,10 @@ namespace Calculator_CS
             designLight();
         }
 
-        // Resets calculator logic
+        // Resets calculator display text
         private void clear()
         {
             txtDisplay.Text = "";
-            answer = null;
-            sign = null;
         }
 
         private void designDark()
@@ -249,5 +172,138 @@ namespace Calculator_CS
             btnEqual.BackColor = Color.Purple;
         }
 
+        public class StringToFormula
+        {
+            private string[] _operators = { "-", "+", "/", "*", "^" };
+            private Func<double, double, double>[] _operations = {
+        (a1, a2) => a1 - a2,
+        (a1, a2) => a1 + a2,
+        (a1, a2) => a1 / a2,
+        (a1, a2) => a1 * a2,
+        (a1, a2) => Math.Pow(a1, a2)
+    };
+
+            public double Eval(string expression)
+            {
+                List<string> tokens = getTokens(expression);
+                Stack<double> operandStack = new Stack<double>();
+                Stack<string> operatorStack = new Stack<string>();
+                int tokenIndex = 0;
+
+                while (tokenIndex < tokens.Count)
+                {
+                    string token = tokens[tokenIndex];
+                    if (token == "(")
+                    {
+                        string subExpr = getSubExpression(tokens, ref tokenIndex);
+                        operandStack.Push(Eval(subExpr));
+                        continue;
+                    }
+                    if (token == ")")
+                    {
+                        throw new ArgumentException("Mis-matched parentheses in expression");
+                    }
+                    //--// 
+                    if (Array.IndexOf(_operators, token) >= 0)
+                    {
+                        while (operatorStack.Count > 0 && Array.IndexOf(_operators, token) < Array.IndexOf(_operators, operatorStack.Peek()))
+                        {
+                            string op = operatorStack.Pop();
+                            double arg2 = operandStack.Pop();
+                            double arg1 = operandStack.Pop();
+                            operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
+                        }
+                        operatorStack.Push(token);
+                    }
+                    else
+                    {
+                        operandStack.Push(double.Parse(token));
+                    }
+                    tokenIndex += 1;
+                }
+
+                while (operatorStack.Count > 0)
+                {
+                    string op = operatorStack.Pop();
+                    double arg2 = operandStack.Pop();
+                    double arg1 = operandStack.Pop();
+                    operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
+                }
+                return operandStack.Pop();
+            }
+
+            private string getSubExpression(List<string> tokens, ref int index)
+            {
+                StringBuilder subExpr = new StringBuilder();
+                int parenlevels = 1;
+                index += 1;
+                while (index < tokens.Count && parenlevels > 0)
+                {
+                    string token = tokens[index];
+                    if (tokens[index] == "(")
+                    {
+                        parenlevels += 1;
+                    }
+
+                    if (tokens[index] == ")")
+                    {
+                        parenlevels -= 1;
+                    }
+
+                    if (parenlevels > 0)
+                    {
+                        subExpr.Append(token);
+                    }
+
+                    index += 1;
+                }
+
+                if ((parenlevels > 0))
+                {
+                    throw new ArgumentException("Mis-matched parentheses in expression");
+                }
+                return subExpr.ToString();
+            }
+
+            private List<string> getTokens(string expression)
+            {
+                string operators = "()^*/+-";
+                List<string> tokens = new List<string>();
+                StringBuilder sb = new StringBuilder();
+
+                foreach (char c in expression.Replace(" ", string.Empty))
+                {
+                    if (operators.IndexOf(c) >= 0)
+                    {
+                        if ((sb.Length > 0))
+                        {
+                            tokens.Add(sb.ToString());
+                            sb.Length = 0;
+                        }
+                        tokens.Add(c.ToString());
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
+                }
+
+                if ((sb.Length > 0))
+                {
+                    tokens.Add(sb.ToString());
+                }
+                return tokens;
+            }
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += ".";
+        }
+
+        private void btnPercentage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

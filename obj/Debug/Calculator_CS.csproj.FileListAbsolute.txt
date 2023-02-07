@@ -8,3 +8,14 @@ F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calcul
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.csproj.CoreCompileInputs.cache
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.exe
 F:\Uni Class Stuff\Part IV\7th Semester\Visual Programming\WinForms\Tasks\Calculator_CS\obj\Debug\Calculator_CS.pdb
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.csproj.AssemblyReference.cache
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.csproj.SuggestedBindingRedirects.cache
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.Calculator.resources
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.Properties.Resources.resources
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.csproj.GenerateResource.cache
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.csproj.CoreCompileInputs.cache
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.exe
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.pdb
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.exe.config
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.exe
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.pdb
