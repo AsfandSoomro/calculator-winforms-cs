@@ -18,7 +18,7 @@ namespace Calculator_CS
         }
 
         // Global variables to store the current calculated answer and sign'
-        private int? answer; // ? = Nullable Character
+        private int? answer; // ? = Nullable Integer
         private string sign; 
 
         private void Calculator_Load(object sender, EventArgs e)
@@ -30,22 +30,20 @@ namespace Calculator_CS
             int[] nums = new int[2];
             string[] temp = new string[2];
 
-            try
-            {
+            // Splits at the sign and stores the operands(strings) in temp array of strings
+            if(sign != null) {
                 temp = txtDisplay.Text.Split(sign.ToCharArray()[0]);
-                Console.WriteLine(temp[1]);
             }
-            catch
-            {
-                System.Console.WriteLine("Some exception occured while converting sign to char");
-            }
+            
+            // Checks if either of the operand is empty, if it is then assigns "0" to it (string)
+            if (temp[0] == "") temp[0] = "0";
+            if (temp[1] == "") temp[1] = "0";
 
-            if (temp[0] == null) temp[0] = "0";
-            if (temp[1] == null) temp[1] = "0";
-
+            // Converts the operands from string to integer
             nums[0] = Convert.ToInt32(temp[0]);
             nums[1] = Convert.ToInt32(temp[1]);
-
+            
+            // Performs Calculation as per sign
             if (sign == "+")
             {
                 answer = nums[0] + nums[1];
@@ -56,15 +54,24 @@ namespace Calculator_CS
             }
             else if (sign == "/")
             {
-                answer = nums[0] / nums[1];
+                try { 
+                    answer = nums[0] / nums[1]; 
+                }
+                catch (System.DivideByZeroException) {
+                    MessageBox.Show("You cannot divide by zero", "Error");
+                    clear();   
+                }
             }
             else if (sign == "x")
             {
                 answer = nums[0] * nums[1];
             }
 
-            txtDisplay.Text += Environment.NewLine + Convert.ToString(answer);
+            // Display the output on new on Display on newline
+            if (sign != null && answer != null)
+                txtDisplay.Text += Environment.NewLine + Convert.ToString(answer);
 
+            // Resets the sign (for next calcultions)
             sign = null;
         }
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,7 +79,7 @@ namespace Calculator_CS
             if(sign == null) 
             {
                 sign = "+";
-                if (answer > 0 | answer < 0)
+                if (answer != null)
                     txtDisplay.Text = Convert.ToString(answer) + "+";
                 else
                     txtDisplay.Text += "+";
@@ -84,7 +91,7 @@ namespace Calculator_CS
             if (sign == null)
             {
                 sign = "-";
-                if (answer > 0 | answer < 0)
+                if (answer != null)
                     txtDisplay.Text = Convert.ToString(answer) + "-";
                 else
                     txtDisplay.Text += "-";
@@ -95,7 +102,7 @@ namespace Calculator_CS
             if (sign == null)
             {
                 sign = "/";
-                if (answer > 0 | answer < 0)
+                if (answer != null)
                     txtDisplay.Text = Convert.ToString(answer) + "/";
                 else
                     txtDisplay.Text += "/";
@@ -107,7 +114,7 @@ namespace Calculator_CS
             if (sign == null)
             {
                 sign = "x";
-                if (answer > 0 | answer < 0)
+                if (answer != null)
                     txtDisplay.Text = Convert.ToString(answer) + "x";
                 else
                     txtDisplay.Text += "x";
@@ -122,9 +129,7 @@ namespace Calculator_CS
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text = "";
-            answer = null;
-            sign = null;
+            clear();
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -183,6 +188,14 @@ namespace Calculator_CS
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
             designLight();
+        }
+
+        // Resets calculator logic
+        private void clear()
+        {
+            txtDisplay.Text = "";
+            answer = null;
+            sign = null;
         }
 
         private void designDark()

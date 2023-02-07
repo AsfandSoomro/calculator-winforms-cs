@@ -50,11 +50,11 @@ namespace Calculator_CS
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.txtDisplay = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsToolBar = new System.Windows.Forms.StatusStrip();
+            this.tsddStyles = new System.Windows.Forms.ToolStripDropDownButton();
             this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1.SuspendLayout();
+            this.tsToolBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPercentage
@@ -335,30 +335,30 @@ namespace Calculator_CS
             this.txtDisplay.TabIndex = 20;
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // statusStrip1
+            // tsToolBar
             // 
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(269, 22);
-            this.statusStrip1.TabIndex = 40;
-            this.statusStrip1.Text = "statusStrip1";
+            this.tsToolBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tsToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddStyles});
+            this.tsToolBar.Location = new System.Drawing.Point(0, 0);
+            this.tsToolBar.Name = "tsToolBar";
+            this.tsToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tsToolBar.Size = new System.Drawing.Size(269, 22);
+            this.tsToolBar.TabIndex = 40;
+            this.tsToolBar.Text = "statusStrip1";
             // 
-            // toolStripDropDownButton1
+            // tsddStyles
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddStyles.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddStyles.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.darkToolStripMenuItem,
             this.lightToolStripMenuItem});
-            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(53, 20);
-            this.toolStripDropDownButton1.Text = "Styles";
+            this.tsddStyles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tsddStyles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.tsddStyles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddStyles.Name = "tsddStyles";
+            this.tsddStyles.Size = new System.Drawing.Size(53, 20);
+            this.tsddStyles.Text = "Styles";
             // 
             // darkToolStripMenuItem
             // 
@@ -380,7 +380,7 @@ namespace Calculator_CS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(269, 402);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.tsToolBar);
             this.Controls.Add(this.btnPercentage);
             this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btnDivide);
@@ -406,8 +406,8 @@ namespace Calculator_CS
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Calculator_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.tsToolBar.ResumeLayout(false);
+            this.tsToolBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,8 +435,8 @@ namespace Calculator_CS
         internal System.Windows.Forms.Button btn2;
         internal System.Windows.Forms.Button btn1;
         internal System.Windows.Forms.TextBox txtDisplay;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.StatusStrip tsToolBar;
+        private System.Windows.Forms.ToolStripDropDownButton tsddStyles;
         private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
     }
