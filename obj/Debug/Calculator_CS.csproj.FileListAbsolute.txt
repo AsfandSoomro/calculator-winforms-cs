@@ -19,3 +19,5 @@ C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.pd
 C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.exe.config
 C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.exe
 C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\Calculator_CS.pdb
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\bin\Debug\org.matheval.dll
+C:\Users\raft\Documents\GitHub\calculator-winforms-cs\obj\Debug\Calculator_CS.csproj.CopyComplete
