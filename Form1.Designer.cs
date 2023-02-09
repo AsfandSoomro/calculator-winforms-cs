@@ -54,6 +54,7 @@ namespace Calculator_CS
             this.tsddStyles = new System.Windows.Forms.ToolStripDropDownButton();
             this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.controlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +74,7 @@ namespace Calculator_CS
             this.btnPercentage.TabIndex = 39;
             this.btnPercentage.Text = "%";
             this.btnPercentage.UseVisualStyleBackColor = false;
+            this.btnPercentage.Click += new System.EventHandler(this.btnPercentage_Click);
             // 
             // btnDot
             // 
@@ -86,6 +88,7 @@ namespace Calculator_CS
             this.btnDot.TabIndex = 38;
             this.btnDot.Text = ".";
             this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
             // btnDivide
             // 
@@ -387,6 +390,12 @@ namespace Calculator_CS
             this.lightToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
             // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Text = "Customize";
+            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
@@ -498,6 +507,7 @@ namespace Calculator_CS
         private System.Windows.Forms.ToolStripDropDownButton tsddStyles;
         private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;

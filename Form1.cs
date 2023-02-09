@@ -121,11 +121,15 @@ namespace Calculator_CS
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designChange(Color.FromArgb(255, 32, 32, 32), Color.White, Color.Gold);
+            designChange(Color.FromArgb(255, 32, 32, 32),Color.White,Color.Gold);
         }
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designChange(Color.White, Color.Black, Color.Purple);
+            designChange(Color.White,Color.Black,Color.Purple);
+        }
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            designRed();
         }
 
         // Resets calculator display text
@@ -153,6 +157,24 @@ namespace Calculator_CS
             }
             btnEqual.ForeColor = backColor;
             btnEqual.BackColor = accentColor;
+        }
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += ".";
+        }
+
+        private void btnPercentage_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "%";
+        }
+
+        private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form customize = new Customize();
+            if (customize.ShowDialog() == DialogResult.OK)
+            {
+                designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
+            }
         }
         private void btnDot_Click(object sender, EventArgs e)
         {
