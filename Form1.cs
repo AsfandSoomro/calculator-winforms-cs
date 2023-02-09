@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using org.matheval;
@@ -117,11 +118,11 @@ namespace Calculator_CS
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designDark();
+            designChange(Color.FromArgb(255, 32, 32, 32),Color.White,Color.Gold);
         }
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designLight();
+            designChange(Color.White,Color.Black,Color.Purple);
         }
 
         // Resets calculator display text
@@ -130,57 +131,26 @@ namespace Calculator_CS
             txtDisplay.Text = "";
         }
 
-        private void designDark()
+        private void designChange(Color backColor, Color foreColor, Color accentColor)
         {
-            this.BackColor = Color.FromArgb(255, 32, 32, 32);
+            this.BackColor = backColor;
 
-            txtDisplay.BackColor = Color.FromArgb(255, 32, 32, 32);
-            txtDisplay.ForeColor = Color.White;
+            txtDisplay.BackColor = backColor;
+            txtDisplay.ForeColor = foreColor;
 
-            foreach (Control c in this.Controls)
+            foreach (Button btn in this.Controls.OfType<Button>())
             {
-                if (c is Button)
+                btn.BackColor = backColor;
+                btn.ForeColor = foreColor;
+
+                if (!Regex.IsMatch(btn.Text, @"[0-9.%]"))
                 {
-                    c.BackColor = Color.FromArgb(255, 32, 32, 32);
-                    c.ForeColor = Color.White;
+                    btn.ForeColor = accentColor;
                 }
             }
-            btnAdd.ForeColor = Color.Gold;
-            btnMinus.ForeColor = Color.Gold;
-            btnMultiply.ForeColor = Color.Gold;
-            btnDivide.ForeColor = Color.Gold;
-            btnClear.ForeColor = Color.Gold;
-            btnRemove.ForeColor = Color.Gold;
-            btnClear.ForeColor = Color.Gold;
-            btnEqual.ForeColor = Color.Black;
-            btnEqual.BackColor = Color.Gold;
+            btnEqual.ForeColor = backColor;
+            btnEqual.BackColor = accentColor;
         }
-        private void designLight()
-        {
-            this.BackColor = Color.White;
-
-            txtDisplay.BackColor = Color.White;
-            txtDisplay.ForeColor = Color.Black;
-
-            foreach (Control c in this.Controls)
-            {
-                if (c is Button)
-                {
-                    c.BackColor = Color.White;
-                    c.ForeColor = Color.Black;
-                }
-            }
-            btnAdd.ForeColor = Color.Purple;
-            btnMinus.ForeColor = Color.Purple;
-            btnMultiply.ForeColor = Color.Purple;
-            btnDivide.ForeColor = Color.Purple;
-            btnClear.ForeColor = Color.Purple;
-            btnRemove.ForeColor = Color.Purple;
-            btnClear.ForeColor = Color.Purple;
-            btnEqual.ForeColor = Color.White;
-            btnEqual.BackColor = Color.Purple;
-        }
-
         private void btnDot_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += ".";
@@ -189,6 +159,16 @@ namespace Calculator_CS
         private void btnPercentage_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "%";
+        }
+
+        private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form customize = new Customize();
+            if (customize.ShowDialog() == DialogResult.OK)
+            {
+                designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
+            }
+            
         }
     }
 }
