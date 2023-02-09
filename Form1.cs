@@ -158,6 +158,7 @@ namespace Calculator_CS
             btnEqual.ForeColor = backColor;
             btnEqual.BackColor = accentColor;
         }
+
         private void btnDot_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += ".";

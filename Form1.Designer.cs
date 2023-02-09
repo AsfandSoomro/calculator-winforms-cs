@@ -377,7 +377,7 @@ namespace Calculator_CS
             // darkToolStripMenuItem
             // 
             this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.darkToolStripMenuItem.Text = "Dark";
             this.darkToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
@@ -385,7 +385,7 @@ namespace Calculator_CS
             // lightToolStripMenuItem
             // 
             this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.lightToolStripMenuItem.Text = "Light";
             this.lightToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
@@ -393,7 +393,7 @@ namespace Calculator_CS
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.redToolStripMenuItem.Text = "Red";
             this.redToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
@@ -401,7 +401,7 @@ namespace Calculator_CS
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.customizeToolStripMenuItem.Text = "Customize";
             this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // 
