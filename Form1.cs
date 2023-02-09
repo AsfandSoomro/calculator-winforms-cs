@@ -16,7 +16,7 @@ namespace Calculator_CS
         {
             InitializeComponent();
         }
-
+        
         // Global variables to store the current calculated answer and sign'
         private int? answer; // ? = Nullable Integer
         private string sign; 
@@ -224,7 +224,7 @@ namespace Calculator_CS
             btnClear.ForeColor = Color.Gold;
             btnRemove.ForeColor = Color.Gold;
             btnClear.ForeColor = Color.Gold;
-            btnEqual.ForeColor = Color.Black;
+            btnEqual.ForeColor = Color.Purple;
             btnEqual.BackColor = Color.Gold;
         }
         private void designLight()
@@ -242,14 +242,15 @@ namespace Calculator_CS
                     c.ForeColor = Color.Black;
                 }
             }
-            btnAdd.ForeColor = Color.Black;
-            btnMinus.ForeColor = Color.Black;
-            btnMultiply.ForeColor = Color.Black;
-            btnDivide.ForeColor = Color.Black;
-            btnClear.ForeColor = Color.Black;
-            btnRemove.ForeColor = Color.Black;
-            btnClear.ForeColor = Color.Black;
-            btnEqual.ForeColor = Color.Black;
+            btnAdd.ForeColor = Color.Purple;
+            btnMinus.ForeColor = Color.Purple;
+            btnMultiply.ForeColor = Color.Purple;
+            btnDivide.ForeColor = Color.Purple;
+            btnClear.ForeColor = Color.Purple;
+            btnRemove.ForeColor = Color.Purple;
+            btnClear.ForeColor = Color.Purple;
+            btnEqual.ForeColor = Color.White;
+            btnEqual.BackColor = Color.Purple;
             
         }
         
@@ -283,6 +284,34 @@ namespace Calculator_CS
             btnMultiply.BackColor = Color.Black;
             btnMinus.BackColor = Color.Black;
             btnAdd.BackColor = Color.Black;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About aboutWindow = new About();
+            aboutWindow.Show();
+        }
+
+        private void txtDisplay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Back) {
+                btnRemove.PerformClick();
+            }
+            else if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return) {
+                btnEqual.PerformClick();
+            }
+            else if(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) {
+                txtDisplay.Text += (char)e.KeyData;
+            }
+            else if(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) {
+                txtDisplay.Text += (int)(e.KeyCode - Keys.NumPad0);
+            }
+        }
+
+        private void controlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Controls fm = new Controls();
+            fm.Show();
         }
     }
 }
