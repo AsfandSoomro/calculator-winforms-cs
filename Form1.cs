@@ -175,24 +175,6 @@ namespace Calculator_CS
             {
                 designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
             }
-        }
-        private void btnDot_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += ".";
-        }
-
-        private void btnPercentage_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "%";
-        }
-
-        private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form customize = new Customize();
-            if (customize.ShowDialog() == DialogResult.OK)
-            {
-                designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
-            }
 
         }
 
@@ -222,11 +204,6 @@ namespace Calculator_CS
         {
             Controls fm = new Controls();
             fm.Show();
-        }
-
-        private void redToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            designRed();
         }
 
         private void designRed()
