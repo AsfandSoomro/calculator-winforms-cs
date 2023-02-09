@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using org.matheval;
 
 namespace Calculator_CS
 {
@@ -16,109 +18,45 @@ namespace Calculator_CS
         {
             InitializeComponent();
         }
-        
-        // Global variables to store the current calculated answer and sign'
-        private int? answer; // ? = Nullable Integer
-        private string sign; 
 
         private void Calculator_Load(object sender, EventArgs e)
-        {
+        {   
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            int[] nums = new int[2];
-            string[] temp = new string[2];
-
-            // Splits at the sign and stores the operands(strings) in temp array of strings
-            if(sign != null) {
-                temp = txtDisplay.Text.Split(sign.ToCharArray()[0]);
-            }
-            
-            // Checks if either of the operand is empty, if it is then assigns "0" to it (string)
-            if (temp[0] == "") temp[0] = "0";
-            if (temp[1] == "") temp[1] = "0";
-
-            // Converts the operands from string to integer
-            nums[0] = Convert.ToInt32(temp[0]);
-            nums[1] = Convert.ToInt32(temp[1]);
-            
-            // Performs Calculation as per sign
-            if (sign == "+")
+            Expression expression = new Expression(txtDisplay.Text.Replace("%", "/100").Replace("x", "*"));
+            try
             {
-                answer = nums[0] + nums[1];
+                Object result = expression.Eval();
+                txtDisplay.Text = result.ToString();
             }
-            else if (sign == "-")
+            catch (DivideByZeroException)
             {
-                answer = nums[0] - nums[1];
+                txtDisplay.Text = "Cannot divide by zero";
             }
-            else if (sign == "/")
+            catch (Exception)
             {
-                try { 
-                    answer = nums[0] / nums[1]; 
-                }
-                catch (System.DivideByZeroException) {
-                    MessageBox.Show("You cannot divide by zero", "Error");
-                    clear();   
-                }
+                Console.WriteLine("Some exception occurred!");
             }
-            else if (sign == "x")
-            {
-                answer = nums[0] * nums[1];
-            }
-
-            // Display the output on new on Display on newline
-            if (sign != null && answer != null)
-                txtDisplay.Text += Environment.NewLine + Convert.ToString(answer);
-
-            // Resets the sign (for next calcultions)
-            sign = null;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(sign == null) 
-            {
-                sign = "+";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "+";
-                else
-                    txtDisplay.Text += "+";
-            }
+            txtDisplay.Text += "+";
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "-";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "-";
-                else
-                    txtDisplay.Text += "-";
-            }
+            txtDisplay.Text += "-";
         }
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "/";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "/";
-                else
-                    txtDisplay.Text += "/";
-            }
+            txtDisplay.Text += "/";
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            if (sign == null)
-            {
-                sign = "x";
-                if (answer != null)
-                    txtDisplay.Text = Convert.ToString(answer) + "x";
-                else
-                    txtDisplay.Text += "x";
-            }
+            txtDisplay.Text += "x";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -183,107 +121,57 @@ namespace Calculator_CS
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designDark();
+            designChange(Color.FromArgb(255, 32, 32, 32), Color.White, Color.Gold);
         }
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            designLight();
-        }
-        private void redToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            designRed();
+            designChange(Color.White, Color.Black, Color.Purple);
         }
 
-        // Resets calculator logic
+        // Resets calculator display text
         private void clear()
         {
             txtDisplay.Text = "";
-            answer = null;
-            sign = null;
         }
 
-        private void designDark()
+        private void designChange(Color backColor, Color foreColor, Color accentColor)
         {
-            this.BackColor = Color.FromArgb(255, 32, 32, 32);
+            this.BackColor = backColor;
 
-            txtDisplay.BackColor = Color.FromArgb(255, 32, 32, 32);
-            txtDisplay.ForeColor = Color.White;
+            txtDisplay.BackColor = backColor;
+            txtDisplay.ForeColor = foreColor;
 
-            foreach (Control c in this.Controls)
+            foreach (Button btn in this.Controls.OfType<Button>())
             {
-                if (c is Button)
+                btn.BackColor = backColor;
+                btn.ForeColor = foreColor;
+
+                if (!Regex.IsMatch(btn.Text, @"[0-9.%]"))
                 {
-                    c.BackColor = Color.FromArgb(255, 32, 32, 32);
-                    c.ForeColor = Color.White;
+                    btn.ForeColor = accentColor;
                 }
             }
-            btnAdd.ForeColor = Color.Gold;
-            btnMinus.ForeColor = Color.Gold;
-            btnMultiply.ForeColor = Color.Gold;
-            btnDivide.ForeColor = Color.Gold;
-            btnClear.ForeColor = Color.Gold;
-            btnRemove.ForeColor = Color.Gold;
-            btnClear.ForeColor = Color.Gold;
-            btnEqual.ForeColor = Color.Purple;
-            btnEqual.BackColor = Color.Gold;
+            btnEqual.ForeColor = backColor;
+            btnEqual.BackColor = accentColor;
         }
-        private void designLight()
+        private void btnDot_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
-
-            txtDisplay.BackColor = Color.White;
-            txtDisplay.ForeColor = Color.Black;
-
-            foreach (Control c in this.Controls)
-            {
-                if (c is Button)
-                {
-                    c.BackColor = Color.White;
-                    c.ForeColor = Color.Black;
-                }
-            }
-            btnAdd.ForeColor = Color.Purple;
-            btnMinus.ForeColor = Color.Purple;
-            btnMultiply.ForeColor = Color.Purple;
-            btnDivide.ForeColor = Color.Purple;
-            btnClear.ForeColor = Color.Purple;
-            btnRemove.ForeColor = Color.Purple;
-            btnClear.ForeColor = Color.Purple;
-            btnEqual.ForeColor = Color.White;
-            btnEqual.BackColor = Color.Purple;
-            
+            txtDisplay.Text += ".";
         }
-        
-        private void designRed()
+
+        private void btnPercentage_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb (255,160,0,0);
+            txtDisplay.Text += "%";
+        }
 
-            txtDisplay.BackColor = Color.FromArgb(255,139,0,0);
-            txtDisplay.ForeColor = Color.Black;
-
-            foreach (Control c in this.Controls)
+        private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form customize = new Customize();
+            if (customize.ShowDialog() == DialogResult.OK)
             {
-                if (c is Button)
-                {
-                    c.BackColor = Color.FromArgb(255, 139, 0, 0);
-                    c.ForeColor = Color.Black;
-                }
+                designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
             }
-            btnAdd.ForeColor = Color.FromArgb(255,139,0,0);
-            btnMinus.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnMultiply.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnDivide.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnRemove.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnEqual.ForeColor = Color.FromArgb(255, 139, 0, 0);
-            btnEqual.BackColor = Color.Black;
-            btnRemove.BackColor = Color.Black;
-            btnClear.BackColor = Color.Black;
-            btnDivide.BackColor = Color.Black;
-            btnMultiply.BackColor = Color.Black;
-            btnMinus.BackColor = Color.Black;
-            btnAdd.BackColor = Color.Black;
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -312,6 +200,43 @@ namespace Calculator_CS
         {
             Controls fm = new Controls();
             fm.Show();
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            designRed();
+        }
+
+        private void designRed()
+        {
+            this.BackColor = Color.FromArgb(255, 160, 0, 0);
+
+            txtDisplay.BackColor = Color.FromArgb(255, 139, 0, 0);
+            txtDisplay.ForeColor = Color.Black;
+
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                {
+                    c.BackColor = Color.FromArgb(255, 139, 0, 0);
+                    c.ForeColor = Color.Black;
+                }
+            }
+            btnAdd.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnMinus.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnMultiply.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnDivide.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnRemove.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnEqual.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnEqual.BackColor = Color.Black;
+            btnRemove.BackColor = Color.Black;
+            btnClear.BackColor = Color.Black;
+            btnDivide.BackColor = Color.Black;
+            btnMultiply.BackColor = Color.Black;
+            btnMinus.BackColor = Color.Black;
+            btnAdd.BackColor = Color.Black;
         }
     }
 }
