@@ -24,12 +24,7 @@ namespace Calculator_CS
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void Customize_Load(object sender, EventArgs e)
@@ -48,6 +43,7 @@ namespace Calculator_CS
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 foreColor = colorDlg.Color;
+                this.btnForegroundColor.Text = foreColor.Name;
             }
         }
 
@@ -62,6 +58,7 @@ namespace Calculator_CS
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 backColor = colorDlg.Color;
+                this.btnBackgroundColor.Text = backColor.Name;
             }
         }
 
@@ -76,6 +73,7 @@ namespace Calculator_CS
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
                 accentColor = colorDlg.Color;
+                this.btnAccentColor.Text = accentColor.Name;
             }
         }
 

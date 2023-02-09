@@ -66,7 +66,6 @@
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Foreground Color";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -76,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Background Color";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -86,7 +84,6 @@
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Accent Color";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnForegroundColor
             // 
@@ -133,6 +130,7 @@
             this.Controls.Add(this.btnApply);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Customize";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customize";
             this.Load += new System.EventHandler(this.Customize_Load);
             this.ResumeLayout(false);
