@@ -124,6 +124,10 @@ namespace Calculator_CS
         {
             designChange(Color.White,Color.Black,Color.Purple);
         }
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            designRed();
+        }
 
         // Resets calculator display text
         private void clear()
@@ -169,6 +173,66 @@ namespace Calculator_CS
                 designChange(Customize.backColor, Customize.foreColor, Customize.accentColor);
             }
             
+        }
+        
+        private void designRed()
+        {
+            this.BackColor = Color.FromArgb (255,160,0,0);
+
+            txtDisplay.BackColor = Color.FromArgb(255,139,0,0);
+            txtDisplay.ForeColor = Color.Black;
+
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                {
+                    c.BackColor = Color.FromArgb(255, 139, 0, 0);
+                    c.ForeColor = Color.Black;
+                }
+            }
+            btnAdd.ForeColor = Color.FromArgb(255,139,0,0);
+            btnMinus.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnMultiply.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnDivide.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnRemove.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnClear.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnEqual.ForeColor = Color.FromArgb(255, 139, 0, 0);
+            btnEqual.BackColor = Color.Black;
+            btnRemove.BackColor = Color.Black;
+            btnClear.BackColor = Color.Black;
+            btnDivide.BackColor = Color.Black;
+            btnMultiply.BackColor = Color.Black;
+            btnMinus.BackColor = Color.Black;
+            btnAdd.BackColor = Color.Black;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About aboutWindow = new About();
+            aboutWindow.Show();
+        }
+
+        private void txtDisplay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Back) {
+                btnRemove.PerformClick();
+            }
+            else if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return) {
+                btnEqual.PerformClick();
+            }
+            else if(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) {
+                txtDisplay.Text += (char)e.KeyData;
+            }
+            else if(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) {
+                txtDisplay.Text += (int)(e.KeyCode - Keys.NumPad0);
+            }
+        }
+
+        private void controlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Controls fm = new Controls();
+            fm.Show();
         }
     }
 }

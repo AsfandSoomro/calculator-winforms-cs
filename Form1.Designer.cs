@@ -55,6 +55,10 @@ namespace Calculator_CS
             this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.controlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsToolBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +162,7 @@ namespace Calculator_CS
             // 
             // btn9
             // 
+            this.btn9.AccessibleName = "";
             this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
@@ -215,6 +220,7 @@ namespace Calculator_CS
             // btn5
             // 
             this.btn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btn5.CausesValidation = false;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
@@ -337,12 +343,14 @@ namespace Calculator_CS
             this.txtDisplay.Size = new System.Drawing.Size(245, 57);
             this.txtDisplay.TabIndex = 20;
             this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDisplay_KeyDown);
             // 
             // tsToolBar
             // 
             this.tsToolBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tsToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsddStyles});
+            this.tsddStyles,
+            this.toolStripDropDownButton1});
             this.tsToolBar.Location = new System.Drawing.Point(0, 0);
             this.tsToolBar.Name = "tsToolBar";
             this.tsToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -357,18 +365,21 @@ namespace Calculator_CS
             this.darkToolStripMenuItem,
             this.lightToolStripMenuItem,
             this.customizeToolStripMenuItem});
+            this.redToolStripMenuItem});
             this.tsddStyles.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsddStyles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.tsddStyles.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddStyles.Name = "tsddStyles";
             this.tsddStyles.Size = new System.Drawing.Size(53, 20);
             this.tsddStyles.Text = "Styles";
+            this.tsddStyles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // darkToolStripMenuItem
             // 
             this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
             this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.darkToolStripMenuItem.Text = "Dark";
+            this.darkToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
             // 
             // lightToolStripMenuItem
@@ -376,6 +387,7 @@ namespace Calculator_CS
             this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
             this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lightToolStripMenuItem.Text = "Light";
+            this.lightToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
             // 
             // customizeToolStripMenuItem
@@ -384,9 +396,46 @@ namespace Calculator_CS
             this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customizeToolStripMenuItem.Text = "Customize";
             this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redToolStripMenuItem.Text = "Red";
+            this.redToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(46, 20);
+            this.toolStripDropDownButton1.Text = "Help";
+            // 
+            // controlsToolStripMenuItem
+            // 
+            this.controlsToolStripMenuItem.Name = "controlsToolStripMenuItem";
+            this.controlsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlsToolStripMenuItem.Text = "Controls";
+            this.controlsToolStripMenuItem.Click += new System.EventHandler(this.controlsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Calculator
             // 
+            this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -415,6 +464,7 @@ namespace Calculator_CS
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Calculator_Load);
             this.tsToolBar.ResumeLayout(false);
@@ -451,6 +501,10 @@ namespace Calculator_CS
         private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlsToolStripMenuItem;
     }
 }
 
