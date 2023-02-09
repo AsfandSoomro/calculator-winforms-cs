@@ -24,9 +24,17 @@ namespace Calculator_CS
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            Expression expression = new Expression(txtDisplay.Text.Replace("%","/100"));
-            Object result = expression.Eval();
-            txtDisplay.Text = result.ToString();
+            Expression expression = new Expression(txtDisplay.Text.Replace("%", "/100").Replace("x", "*"));
+            try {
+                Object result = expression.Eval();
+                txtDisplay.Text = result.ToString();
+            }
+            catch (DivideByZeroException) {
+                txtDisplay.Text = "Cannot divide by zero";
+            }
+            catch (Exception) {
+                Console.WriteLine("Some exception occurred!");
+            }
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -44,7 +52,7 @@ namespace Calculator_CS
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += "*";
+            txtDisplay.Text += "x";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
